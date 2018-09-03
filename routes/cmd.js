@@ -1,27 +1,26 @@
-var express = require('express');
+var router = require('express').Router();
+var exec = require("child_process").exec;
 
-var router = express.Router();
 
-var exec = require("child_process").exec,child;
+router.get('/', (req,res) => {
+	res.render('cmd.ejs',{title: 'Remote control'});
+});
 
-router.get('/:func', function(req,res,next){
-	console.log(req.params.func);
+
+router.get('/:func', (req,res) => {
+	console.log("Func : " + req.params.func);
 	var key;
-	if(req.params.func ==null){
+	if(req.params.func == null){
 		key=" ";
 	}
 	else{
 		key = req.params.func;
 	}
-	child = exec(key, function(err,stdout,stderr){
-		console.log(stdout);
-		console.log(stderr);
+	 exec(key, function(err,stdout,stderr){
+		console.log("stdout : " + stdout);
+		console.log("stderr : " + stderr);
 		res.redirect('/cmd');
 	});
-});
-
-router.get('/', function(req,res,next){
-	res.render('cmd.ejs',{title: 'Remote control'});
 });
 
 module.exports = router;
