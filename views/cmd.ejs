@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title%></title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+
+	<body>
+		<h1><%= title%> <h1>
+
+		<p> </p>
+
+<form action="/cmd">
+<button type="submit" formaction="/cmd/sh remoteOn.sh">RemoteOn</button>
+<button type="submit" formaction="/cmd/sh remoteOff.sh">RemoteOff</button>
+<button type="submit" formaction="/cmd/sh AirconOn.sh">AirconOn</button>
+<button type="submit" formaction="/cmd/sh AirconOff.sh">AirconOff</button>
+<button type="submit" formaction="/cmd/sh Aircon_powermode.sh">Powermode</button>
+<button type="submit" formaction="/cmd/sh Aircon_savemode.sh">Savemode</button>
+<button type="submit" formaction="/cmd/sh Aircon_temp_up.sh">TempUp</button>
+<button type="submit" formaction="/cmd/sh Aircon_temp_down.sh">TempDown</button>
+<button type="submit" formaction="/cmd/sh Aircon_windpower.sh">Windpower</button>
+</form>
+
+</body>
+</html>
