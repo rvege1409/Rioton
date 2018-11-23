@@ -1,25 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 	<head>
-		<title><%= title%></title>
-		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Tab Styles Inspiration</title>
+		<meta name="description" content="Tab Styles Inspiration: A small collection of styles for tabs" />
+		<meta name="keywords" content="tabs, inspiration, web design, css, modern, effects, svg" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/demo.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/tabs.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/tabstyles.css" />
+  		<script src="javascripts/modernizr.custom.js"></script>
 	</head>
-
 	<body>
-		<h1><%= title%> <h1>
+		<svg class="hidden">
+			<defs>
+				<path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"/>
+			</defs>
+		</svg>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/PagePreloadingEffect/"><span>Previous Demo</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=19559"><span>Back to the Codrops Article</span></a></span>
+			</div>
+			<header class="codrops-header">
+				<h1> Rioton Remote Controller <span> RRC</span></h1>
+				<p class="support">Your browser does not support <strong>flexbox</strong>! <br />Please view this demo with a <strong>modern browser</strong>.</p>
+			</header>
+			<section>
+				<div class="tabs tabs-style-bar">
+					<nav>
+						<ul>
+							<li><a href="#section-bar-1" class="icon icon-display"><span>TV</span></a></li>
+							<li><a href="#section-bar-2" class="icon icon-box"><span>Air_condition</span></a></li>
+							<li><a href="#section-bar-3" ><span>Lights</span></a></li>
+							<li><a href="#section-bar-4" ><span>Fan</span></a></li>
+							<li><a href="#section-bar-5" ><span>ETC</span></a></li>
+						</ul>
+					</nav>
+					<div class="content-wrap">
+						<section id="section-bar-1">
+                <form action = "/cmd" method="get">
+                        <table border="1" align="center" width="50%">
+                            <tr>
+                                <td></td>
+                                <td><button type = "submit" formaction='/cmd/sh on_off.sh' style = "width:100px; height:80px;" >Power</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><button type = "submit" formaction='/cmd/sh ch_up.sh' style = "width:100px; height:80px;" >CU</td>
+                                <td></td>
+                                <td><button type = "submit" formaction='/cmd/sh v_up.sh' style = "width:100px; height:80px;" >VU</td>
+                            </tr>
+                            <tr>
+                                <td><button type = "submit" formaction='/cmd/sh ch_down.sh' style = "width:100px; height:80px;"  >CD</td>
+                                <td></td>
+                                <td><button type = "submit" formaction='/cmd/sh v_down.sh' style = "width:100px; height:80px;" >VD</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><button type = "submit" formaction='/cmd/sh v_mute.sh' style = "width:100px; height:80px;" >Mute</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><button type = "submit" formaction='/cmd/sh num1.sh' style = "width:100px; height:80px;">1</td>
+                                <td><button type = "submit" formaction='/cmd/sh num2.sh' style = "width:100px; height:80px;">2</td>
+                                <td><button type = "submit" formaction='/cmd/sh num3.sh' style = "width:100px; height:80px;">3</td>
+                            </tr>
+                            <tr>
+                                <td><button type = "submit" formaction='/cmd/sh num4.sh' style = "width:100px; height:80px;" >4</td>
+                                <td><button type = "submit" formaction='/cmd/sh num5.sh' style = "width:100px; height:80px;">5</td>
+                                <td><button type = "submit" formaction='/cmd/sh num6.sh' style = "width:100px; height:80px;">6</td>
+                            </tr>
+                            <tr>
+                                <td><button type = "submit" formaction='/cmd/sh num7.sh' style = "width:100px; height:80px;">7</td>
+                                <td><button type = "submit" formaction='/cmd/sh num8.sh' style = "width:100px; height:80px;">8</td>
+                                <td><button type = "submit" formaction='/cmd/sh num9.sh' style = "width:100px; height:80px;">9</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><button type = "submit" formaction='/cmd/sh num0.sh' style = "width:100px; height:80px;">0</td>
+                                <td></td>
+                            </tr>
+                        
+                        </table>
+                  </form>
+                        </section>
+						<section id="section-bar-2"><p>2</p></section>
+						<section id="section-bar-3"><p>3</p></section>
+						<section id="section-bar-4"><p>4</p></section>
+						<section id="section-bar-5"><p>5</p></section>
+					</div><!-- /content -->
+				</div><!-- /tabs -->
+			</section>
+					<script src="javascripts/cbpFWTabs.js"></script>
+		<script>
+			(function() {
 
-		<p> </p>
+				[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+					new CBPFWTabs( el );
+				});
 
-<form>
-<button type="submit" formaction="/cmd/sh on_off.sh">Tv On/Off</button>
-
-<button type="submit" formaction="/cmd/sh ch_up.sh">Channel Up</button>
-<button type="submit" formaction="/cmd/sh ch_down.sh">Channel Down</button>
-
-<button type="submit" formaction="/cmd/sh v_up.sh">Volumn Up</button>
-<button type="submit" formaction="/cmd/sh v_down.sh">Volumn Down</button>
-
-</form>
-
-</body>
+			})();
+		</script>
+	</body>
 </html>
